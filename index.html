@@ -21,37 +21,46 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 20px;
+      padding: clamp(10px, 5%, 30px);
       min-height: 100vh;
     }
 
     header {
-      margin-bottom: 25px;
-      padding: 0 10px;
+      margin-bottom: clamp(20px, 5vw, 40px);
+      padding: 0 clamp(10px, 5%, 20px);
     }
 
     h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: clamp(1.5rem, 5vw, 2.5rem); /* responsive font size */
+      margin-bottom: clamp(5px, 2vw, 15px);
       color: #00ffc3;
       word-wrap: break-word;
     }
 
     p {
-      font-size: 1rem;
-      margin-bottom: 20px;
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+      margin-bottom: clamp(15px, 3vw, 25px);
+    }
+
+    .profile-img {
+      width: clamp(90px, 20vw, 150px); /* image scales with screen */
+      height: clamp(90px, 20vw, 150px);
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: clamp(10px, 2vw, 20px);
+      border: 2px solid #00ffc3;
     }
 
     .social-links {
       display: flex;
-      gap: 25px;
+      gap: clamp(15px, 5vw, 30px);
       justify-content: center;
       flex-wrap: wrap;
     }
 
     .social-links a {
       color: #f0f0f0;
-      font-size: 2rem;
+      font-size: clamp(1.5rem, 5vw, 2rem);
       transition: color 0.3s, transform 0.3s;
     }
 
@@ -61,31 +70,16 @@
     }
 
     footer {
-      margin-top: 30px;
-      font-size: 0.8rem;
+      margin-top: clamp(20px, 5vw, 40px);
+      font-size: clamp(0.7rem, 2vw, 0.9rem);
       color: #888;
-    }
-
-    /* Responsive tweaks */
-    @media (max-width: 400px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-
-      p {
-        font-size: 0.9rem;
-      }
-
-      .social-links a {
-        font-size: 1.8rem;
-        gap: 15px;
-      }
     }
   </style>
 </head>
 <body>
 
   <header>
+    <img src="profile.jpg" alt="Putin Pasha" class="profile-img">
     <h1>Putin Pasha</h1>
     <p>Hello! Welcome to my personal profile page.</p>
   </header>
