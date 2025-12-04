@@ -1,97 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Putin Pasha</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background-color: #121212;
-      color: #f0f0f0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: clamp(10px, 5%, 30px);
-      min-height: 100vh;
-    }
-
-    header {
-      margin-bottom: clamp(20px, 5vw, 40px);
-      padding: 0 clamp(10px, 5%, 20px);
-    }
-
-    h1 {
-      font-size: clamp(1.5rem, 5vw, 2.5rem); /* responsive font size */
-      margin-bottom: clamp(5px, 2vw, 15px);
-      color: #00ffc3;
-      word-wrap: break-word;
-    }
-
-    p {
-      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
-      margin-bottom: clamp(15px, 3vw, 25px);
-    }
-
-    .profile-img {
-      width: clamp(90px, 20vw, 150px); /* image scales with screen */
-      height: clamp(90px, 20vw, 150px);
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: clamp(10px, 2vw, 20px);
-      border: 2px solid #00ffc3;
-    }
-
-    .social-links {
-      display: flex;
-      gap: clamp(15px, 5vw, 30px);
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .social-links a {
-      color: #f0f0f0;
-      font-size: clamp(1.5rem, 5vw, 2rem);
-      transition: color 0.3s, transform 0.3s;
-    }
-
-    .social-links a:hover {
-      color: #00ffc3;
-      transform: scale(1.2);
-    }
-
-    footer {
-      margin-top: clamp(20px, 5vw, 40px);
-      font-size: clamp(0.7rem, 2vw, 0.9rem);
-      color: #888;
-    }
-  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Putin Pasha - Official Site</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7f9; /* Light background */
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for aesthetics, though mainly for desktop */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 10px;
+        }
+    </style>
 </head>
-<body>
+<body class="text-gray-800">
 
-  <header>
-    <img src="profile.jpg" alt="Putin Pasha" class="profile-img">
-    <h1>Putin Pasha</h1>
-    <p>Hello! Welcome to my personal profile page.</p>
-  </header>
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 md:justify-start md:space-x-10">
+                <!-- Name/Logo -->
+                <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <a href="#home" class="text-2xl font-extrabold text-indigo-600 hover:text-indigo-700 transition duration-150 ease-in-out tracking-wide">
+                        PUTIN PASHA
+                    </a>
+                </div>
 
-  <div class="social-links">
-    <a href="https://wa.me/YOURNUMBER" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://instagram.com/putinpasha2025/" target="_blank"><i class="fab fa-instagram"></i></a>
-  </div>
+                <!-- Mobile Menu Button (Hamburger) -->
+                <div class="-mr-2 -my-2 md:hidden">
+                    <button id="mobile-menu-btn" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <!-- Icon for menu open -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
 
-  <footer>
-    &copy; 2025 Putin Pasha. All rights reserved.
-  </footer>
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#home" class="text-base font-medium text-gray-600 hover:text-indigo-600 transition duration-150">Home</a>
+                    <a href="#gallery" class="text-base font-medium text-gray-600 hover:text-indigo-600 transition duration-150">Gallery</a>
+                    <a href="#contact" class="text-base font-medium text-gray-600 hover:text-indigo-600 transition duration-150">Contact</a>
+                </nav>
+            </div>
+        </div>
 
+        <!-- Mobile Menu Panel (Hidden by default) -->
+        <div id="mobile-menu" class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden hidden">
+            <div class="rounded-lg shadow-2xl ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+                <div class="pt-5 pb-6 px-5">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <span class="text-xl font-bold text-indigo-600">MENU</span>
+                        </div>
+                        <div class="-mr-2">
+                            <button id="mobile-menu-close-btn" type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-500 hover:text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                                <span class="sr-only">Close menu</span>
+                                <!-- Icon for menu close (X) -->
+                                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <nav class="grid gap-y-4">
+                            <a href="#home" class="mobile-nav-link -m-3 p-3 flex items-center rounded-md hover:bg-gray-50 text-base font-medium text-gray-700">Home</a>
+                            <a href="#gallery" class="mobile-nav-link -m-3 p-3 flex items-center rounded-md hover:bg-gray-50 text-base font-medium text-gray-700">Gallery</a>
+                            <a href="#contact" class="mobile-nav-link -m-3 p-3 flex items-center rounded-md hover:bg-gray-50 text-base font-medium text-gray-700">Contact</a>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto">
+        <!-- Hero Section -->
+        <section id="home" class="py-16 md:py-24 px-4 sm:px-6 lg:px-8 text-center bg-white shadow-md rounded-b-xl mb-12">
+            <div class="max-w-3xl mx-auto">
+                <!-- Avatar Placeholder -->
+                <div class="flex justify-center mb-8">
+                    <img class="h-32 w-32 md:h-40 md:w-40 rounded-full object-cover border-4 border-indigo-500 shadow-xl" src="https://placehold.co/160x160/e0e7ff/4338ca?text=PP" alt="Putin Pasha Profile Picture">
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+                    Welcome to the World of <span class="text-indigo-600">Putin Pasha</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    A digital showcase of his talents, passion, and personal journey. Explore the gallery and feel free to reach out via the contact form.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#gallery" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-indigo-600 hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                        View Gallery
+                    </a>
+                    <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-indigo-600 text-base font-medium rounded-full shadow-lg text-indigo-600 bg-white hover:bg-indigo-50 transition duration-300 transform hover:scale-105">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-12 md:py-16 px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Gallery & Featured Work</h2>
+            <p class="text-center text-gray-600 mb-10 max-w-xl mx-auto">A selection of recent highlights and memorable moments.</p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 1 -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img class="w-full h-48 object-cover" src="image.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/374151/f3f4f6?text=Image+Placeholder';" alt="Gallery Image 1">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Digital Art Showcase</h3>
+                        <p class="text-sm text-gray-500 mt-1">A collection of his early abstract pieces.</p>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img class="w-full h-48 object-cover" src="image1.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/5b21b6/f3f4f6?text=Image+Placeholder';" alt="Gallery Image 2">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Community Event</h3>
+                        <p class="text-sm text-gray-500 mt-1">Highlights from the recent city festival.</p>
+                    </div>
+                </div>
+                <!-- Item 3 (This one is hidden on mobile and only shows on tablet/desktop to demonstrate responsiveness) -->
+                <div class="hidden sm:block bg-white rounded-xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300">
+                    <img class="w-full h-48 object-cover" src="image2.jpg" onerror="this.onerror=null;this.src='https://placehold.co/600x400/10b981/f3f4f6?text=Image+Placeholder';" alt="Gallery Image 3">
+                    <div class="p-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Travel Photography</h3>
+                        <p class="text-sm text-gray-500 mt-1">Scenic views from his latest trip.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-12 md:py-16 px-4 sm:px-6 lg:px-8 bg-indigo-50 rounded-xl my-12 shadow-inner">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">Contact Putin Pasha</h2>
+            
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-2xl">
+                <p class="text-gray-600 mb-6 text-center">Send a message directly. He responds fastest via mobile!</p>
+                <form action="#" method="POST" class="space-y-4">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                        <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 mt-12">
+        <div class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col items-center justify-center">
+                <!-- Social Media Links (Using simple text/emojis as placeholders for icons) -->
+                      <div class="social-links">
+            
+            <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/putinpasha2025/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:oscaranyijuka@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/256769489102/" target="_blank"><i class="fa-brands fa-whatsapp"></i>
+        </a>
+        </div>
+        <p> <i class="fa-solid fa-location-dot"></i> Buyanja, Rukungiri, Uganda</p>              &copy; 2025 Putin Pasha. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const menuCloseBtn = document.getElementById('mobile-menu-close-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+            // Toggle menu visibility
+            const toggleMenu = () => {
+                mobileMenu.classList.toggle('hidden');
+            };
+
+            menuBtn.addEventListener('click', toggleMenu);
+            menuCloseBtn.addEventListener('click', toggleMenu);
+
+            // Close menu when a navigation link is clicked (important for mobile UX)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
+
